@@ -5,10 +5,20 @@ app_description = "KOBİler için ERP ve MES çözümü"
 app_email = "info@netasys.com.tr"
 app_license = "custom"
 
+login_js = "netasys/public/js/login.js"
+app_logo_url = "/assets/netasys/images/neta_dark.png"
+
+fixtures = [
+    "Custom Field",
+    "Property Setter",
+    "Translation",
+    "Workspace"
+]
+
+
 # Apps
 # ------------------
-
-# required_apps = []
+required_apps = ["wiki"]
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
