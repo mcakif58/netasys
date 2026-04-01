@@ -1,0 +1,9 @@
+/*
+ * netasys.css
+ * Logo switching artık JS ile yapılıyor (theme_logo.js)
+ */
+
+.navbar-brand img {
+	height: 30px !important;
+	width: auto !important;
+}
