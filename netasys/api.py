@@ -9,6 +9,10 @@ def auto_login_demo():
     if "demo.netasys.com.tr" not in host:
         return
 
+    # URL'de ?admin=1 varsa otomatik girişi iptal et
+    if frappe.request.args.get("admin") == "1":
+        return
+
     if frappe.session.user != "Guest":
         return
 
