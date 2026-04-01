@@ -1,5 +1,14 @@
 import frappe
 
+@frappe.whitelist(allow_guest=True)
+def admin_login():
+    # Mevcut oturumu (demo) temizle ve standart login sayfasına at.
+    if hasattr(frappe.local, "login_manager"):
+        frappe.local.login_manager.logout()
+    
+    frappe.local.response["type"] = "redirect"
+    frappe.local.response["location"] = "/login?admin=1"
+
 def auto_login_demo():
     if not getattr(frappe.local, "request", None):
         return
