@@ -12,8 +12,8 @@ def auto_login_demo():
     if frappe.session.user != "Guest":
         return
 
-    # Admin bypass - /login?admin=1 ile admin girişine izin ver
-    if frappe.request.path == "/login" and frappe.request.args.get("admin"):
+    # /login sayfasına hiç müdahale etme, admin girişine izin ver
+    if "/login" in frappe.request.path:
         return
 
     path = frappe.request.path
