@@ -9,8 +9,11 @@ def auto_login_demo():
     if "demo.netasys.com.tr" not in host:
         return
 
-
     if frappe.session.user != "Guest":
+        return
+
+    # Admin bypass - /login?admin=1 ile admin girişine izin ver
+    if frappe.request.path == "/login" and frappe.request.args.get("admin"):
         return
 
     path = frappe.request.path
